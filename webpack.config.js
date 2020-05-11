@@ -18,4 +18,11 @@ module.exports = {
       { test: /\.(css)/, loader: ["style-loader", "css-loader"] },
     ],
   },
+  devServer: {
+    contentBase: path.join(__dirname, "/"),
+    // historyApiFallback: { index: "index.html" },
+    historyApiFallback: { rewrites: [{ from: /./, to: "index.html" }] },
+    port: 3000,
+    hot: true,
+  },
 };
